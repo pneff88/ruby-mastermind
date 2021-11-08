@@ -5,7 +5,7 @@ class Player
 
     def get_guess 
         puts "Player, enter your guess of four colors using the abbreviations:" 
-        puts " 'Rd','Bl','Grn','Ylw','Bl','Wh','Gry','Br' "
+        puts " 'Rd','Bl','Grn','Ylw','Prp','Wh','Gry','Br' "
         puts "Example: Rd Grn Ylw Wh"
         guess = gets.chomp.split(' ')
         guess

@@ -37,9 +37,9 @@ class Board
     def enter_guess(guess_arr)
         guess_arr.each_with_index do |guess_ele, i|
             current_row[i] = guess_ele
-            if guess_ele == winning_colors[i]
+            if guess_ele == self.winning_colors[i]
                 self.exact_count += 1
-            elsif guess_ele != winning_colors[i] && winning_colors.include?(guess_ele) 
+            elsif guess_ele != self.winning_colors[i] && self.winning_colors.include?(guess_ele) 
                 self.near_count += 1
             end
         end
@@ -48,18 +48,19 @@ class Board
     def provide_information #should reset all counters to zero and populate upper four of the array
         i = 4
         while i<8 do
-            current_pos = current_row[i]
-            if self.exact_count>0
-                current_pos = 'X'
+            if exact_count>0
+                current_row[i] = 'X'
                 self.exact_count -= 1
             elsif near_count>0
-                current_pos =  'N'
+                current_row[i] =  'N'
                 self.near_count -= 1
-            else current_pos = '_'
+            else current_row[i] = '_'
             end
             i+=1
         end
     end
+
+
     
 
 end

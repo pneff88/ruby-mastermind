@@ -14,6 +14,11 @@ class Game
             guess = @player.get_guess
             @board.enter_guess(guess)
             @board.provide_information
+            if guess == @board.winning_colors
+                @board.print_board
+                puts 'You won!'
+            else @board.attempts_left -= 1
+            end
         end
     end
 
